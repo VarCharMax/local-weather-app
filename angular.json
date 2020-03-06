@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "local-weather-app": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "local-weather-app"
+    }
+  },
+  "defaultProject": "local-weather-app",
+  "cli": {
+    "analytics": "fff149a6-fdeb-4cd4-91c1-78d0d3881fb1"
+  }
 }
