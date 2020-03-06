@@ -1,7 +1,26 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	]
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "debug.openExplorerOnEnd": true,
+    "explorer.openEditors.visible": 0,
+    "files.autoSave": "onFocusChange",
+    "git.confirmSync": false,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#d04649",
+      "activityBar.activeBorder": "#37cb34",
+      "activityBar.foreground": "#e7e7e7",
+      "activityBar.inactiveForeground": "#e7e7e799",
+      "activityBarBadge.background": "#37cb34",
+      "activityBarBadge.foreground": "#15202b",
+      "statusBar.background": "#b52e31",
+      "statusBarItem.hoverBackground": "#d04649",
+      "statusBar.foreground": "#e7e7e7"
+    }
+  }
 }
