@@ -33,7 +33,8 @@
     "imageRepo": "arabesque/localcast-weather-app",
     "imageName": "localcast-weather",
     "imagePort": "8000",
-    "internalContainerPort": 3000 },
+    "internalContainerPort": 3000
+  },
   "prettier": {
     "printWidth": 90,
     "useTabs": false,
