@@ -4,7 +4,6 @@ import { CurrentWeatherComponent } from './current-weather/current-weather.compo
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { WeatherService } from './weather/weather.service';
-
 @NgModule({
   declarations: [AppComponent, CurrentWeatherComponent],
   imports: [BrowserModule, HttpClientModule],

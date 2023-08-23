@@ -1,49 +1,22 @@
 {
-  "folders": [{
-    "path": "."
-  }],
-  "settings": {
-    "debug.openExplorerOnEnd": true,
-    "explorer.openEditors.visible": 0,
-    "files.autoSave": "onFocusChange",
-    "git.confirmSync": false,
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "workbench.iconTheme": "material-icon-theme",
-    /*
-    "workbench.colorCustomizations": {
-      "activityBar.background": "#d04649",
-      "activityBar.activeBackground": "#d04649",
-      "activityBar.activeBorder": "#37cb34",
-      "activityBar.foreground": "#e7e7e7",
-      "activityBar.inactiveForeground": "#e7e7e799",
-      "activityBarBadge.background": "#37cb34",
-      "activityBarBadge.foreground": "#15202b",
-      "titleBar.activeBackground": "#b52e31",
-      "titleBar.inactiveBackground": "#b52e3199",
-      "titleBar.activeForeground": "#e7e7e7",
-      "titleBar.inactiveForeground": "#e7e7e799",
-      "statusBar.background": "#b52e31",
-      "statusBarItem.hoverBackground": "#d04649",
-      "statusBar.foreground": "#e7e7e7"
-    }, */
-    "peacock.color": "#b52e31",
-    "workbench.colorCustomizations": {
-      "activityBar.background": "#d04649",
-      "activityBar.activeBackground": "#d04649",
-      "activityBar.activeBorder": "#37cb34",
-      "activityBar.foreground": "#e7e7e7",
-      "activityBar.inactiveForeground": "#e7e7e799",
-      "activityBarBadge.background": "#37cb34",
-      "activityBarBadge.foreground": "#15202b",
-      "titleBar.activeBackground": "#b52e31",
-      "titleBar.inactiveBackground": "#b52e3199",
-      "titleBar.activeForeground": "#e7e7e7",
-      "titleBar.inactiveForeground": "#e7e7e799",
-      "statusBar.background": "#b52e31",
-      "statusBarItem.hoverBackground": "#d04649",
-      "statusBar.foreground": "#e7e7e7",
-      "statusBar.border": "#b52e31",
-      "titleBar.border": "#b52e31"
-    }
-  }
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"chromedriver",
+			"debugmessage",
+			"devkit",
+			"localcast",
+			"openweathermap",
+			"postdocker",
+			"predocker",
+			"taillogs",
+			"wdio",
+			"Weatherservice",
+			"webdriverio"
+		]
+	}
 }
