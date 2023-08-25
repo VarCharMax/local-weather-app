@@ -1,3 +1,3 @@
-FROM duluca/minimal-node-web-server:8.11.1
-WORKDIR /usr/src/app
-COPY dist public
+FROM nginx:latest
+COPY dist /var/www/mysite
+COPY ./mysite.conf /etc/nginx/conf.d/default.conf
