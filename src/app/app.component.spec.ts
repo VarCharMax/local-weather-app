@@ -1,5 +1,7 @@
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
+import { MaterialModule } from './material.module';
 import { TestBed } from '@angular/core/testing';
 import { WeatherService } from './weather/weather.service';
 import { WeatherServiceFake } from './weather/weather.service.fake';
@@ -9,6 +11,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent, CurrentWeatherComponent],
       providers: [{ provide: WeatherService, useClass: WeatherServiceFake }],
+      imports: [MaterialModule, BrowserAnimationsModule],
     })
   );
 
@@ -28,6 +31,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('LocalCast Weather');
+    expect(compiled.querySelector('span')?.textContent).toContain('LocalCast Weather');
   });
 });

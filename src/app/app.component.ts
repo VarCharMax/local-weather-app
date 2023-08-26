@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<div>
+  template: `<div class="mat-typography">
     <mat-toolbar color="primary"><span>LocalCast Weather</span></mat-toolbar>
     <mat-card-title>
       <div fxLayoutAlign="center">
-        <div class="mat-caption">Your city, your forecast, right now!</div>
+        <div class="mat-caption vertical-margin">
+          Your city, your forecast, right now!
+        </div>
       </div></mat-card-title
     >
     <div fxLayout="row">
@@ -14,7 +16,9 @@ import { Component } from '@angular/core';
       <div fxFlex="320px">
         <mat-card>
           <mat-card-header>
-            <mat-card-title>Current Weather</mat-card-title>
+            <mat-card-title
+              ><div class="mat-headline">Current Weather</div></mat-card-title
+            >
           </mat-card-header>
           <mat-card-content>
             <app-current-weather></app-current-weather>
