@@ -4,11 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `<div class="mat-typography">
     <mat-toolbar color="primary"><span>LocalCast Weather</span></mat-toolbar>
-    <h1>
-      <div fxLayoutAlign="center">
-        <div class="mat-caption">Your city, your forecast, right now!</div>
-      </div>
-    </h1>
+    <div fxLayoutAlign="center">
+      <h3 class="mat-caption">Your city, your forecast, right now!</h3>
+    </div>
+    <div fxLayoutAlign="center">
+      <app-city-search></app-city-search>
+    </div>
     <div fxLayout="row">
       <div fxFlex></div>
       <div fxFlex="320px">
@@ -26,6 +27,4 @@ import { Component } from '@angular/core';
   </div>`,
   styleUrls: [],
 })
-export class AppComponent {
-  title = 'local-weather-app';
-}
+export class AppComponent {}
