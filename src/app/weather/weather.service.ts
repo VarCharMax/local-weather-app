@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 export interface IWeatherService {
+  currentWeather: BehaviorSubject<ICurrentWeather>;
   getCurrentWeather(city: string, country: string): Observable<ICurrentWeather>;
 }
 

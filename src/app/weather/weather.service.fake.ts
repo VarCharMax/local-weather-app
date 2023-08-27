@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 import { ICurrentWeather } from '../interfaces';
 import { IWeatherService } from './weather.service';
@@ -13,6 +13,17 @@ export class WeatherServiceFake implements IWeatherService {
     temperature: 280.32,
     description: 'light intensity drizzle',
   };
+
+  currentWeather: BehaviorSubject<ICurrentWeather> = new BehaviorSubject<ICurrentWeather>(
+    {
+      city: '__',
+      country: '__',
+      date: Date.now(),
+      image: '',
+      temperature: 0,
+      description: '',
+    }
+  );
 
   public getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
     return of(this.fakeWeather);
