@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CitySearchComponent } from './city-search/city-search.component';
 import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 import { MaterialModule } from './material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TestBed } from '@angular/core/testing';
 import { WeatherService } from './weather/weather.service';
 import { WeatherServiceFake } from './weather/weather.service.fake';
@@ -12,7 +13,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent, CurrentWeatherComponent, CitySearchComponent],
       providers: [{ provide: WeatherService, useClass: WeatherServiceFake }],
-      imports: [MaterialModule, BrowserAnimationsModule],
+      imports: [MaterialModule, BrowserAnimationsModule, ReactiveFormsModule],
     })
   );
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
 import { ICurrentWeather } from '../interfaces';
@@ -15,14 +14,7 @@ export class WeatherServiceFake implements IWeatherService {
   };
 
   currentWeather: BehaviorSubject<ICurrentWeather> = new BehaviorSubject<ICurrentWeather>(
-    {
-      city: '__',
-      country: '__',
-      date: Date.now(),
-      image: '',
-      temperature: 0,
-      description: '',
-    }
+    this.fakeWeather
   );
 
   public getCurrentWeather(city: string, country: string): Observable<ICurrentWeather> {
