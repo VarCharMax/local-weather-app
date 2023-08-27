@@ -7,12 +7,14 @@
 	"settings": {
 		"cSpell.words": [
 			"chromedriver",
+			"codelyzer",
 			"compat",
 			"debugmessage",
 			"deeppurple",
 			"devkit",
 			"localcast",
 			"openweathermap",
+			"parens",
 			"postdocker",
 			"predocker",
 			"taillogs",
