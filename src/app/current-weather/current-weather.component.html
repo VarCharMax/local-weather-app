@@ -1,15 +1,15 @@
 <div *ngIf="current">
   <div fxLayout="row">
-    <div fxFlex="66%" class="mat-title no-margin">{{current.city}}, {{current.country}}</div>
-    <div class="right mat-subheading no-margin" fxFlex>{{current.date | date:'EEEE MMM d'}}{{getOrdinal(current.date)}}</div>
+    <mat-card-title fxFlex="66%" class="no-margin">{{current.city}}, {{current.country}}</mat-card-title>
+    <mat-card-subtitle class="right no-margin" fxFlex>{{current.date | date:'EEEE MMM d'}}{{getOrdinal(current.date)}}</mat-card-subtitle>
   </div>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="55%"><img class="img-zoom" [src]='current.image' alt="image" height="20px" width="20px"></div>
+    <div fxFlex="55%"><img mat-card-md-image [src]='current.image' alt="image"></div>
     <div fxFlex class="right no-margin">
-      <p class="mat-display-3">{{current.temperature | number:'1.0-0'}}<span class="mat-display-1">&#8451;</span></p>
+      <p class="mat-body-1">{{current.temperature | number:'1.0-0'}}<span class="mat-body-2">&#8451;</span></p>
       </div>
   </div>
-  <div fxLayoutAlign="center" class="mat-caption">
+  <mat-card-footer fxLayoutAlign="center" class="mat-caption">
     {{current.description}}
-  </div>
+  </mat-card-footer>
 </div>
