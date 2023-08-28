@@ -1,7 +1,7 @@
 export const environment = {
-  production: false,
+  production: true,
   appId: '71e6b4ee9adead3c9e754dcc8dba35d4',
-  baseUrl: 'http://',
+  baseUrl: 'https://',
   geonamesApi: 'secure',
   username: 'localcast',
 };

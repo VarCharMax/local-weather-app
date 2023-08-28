@@ -1,13 +1,17 @@
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { PostalCodeService, defaultPostalCode } from '../postal-code/postal-code.service';
+import { first, map, switchMap } from 'rxjs/operators';
 
-import { HttpClient } from '@angular/common/http';
 import { ICurrentWeather } from '../interfaces';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 export interface IWeatherService {
-  currentWeather: BehaviorSubject<ICurrentWeather>;
-  getCurrentWeather(city: string, country: string): Observable<ICurrentWeather>;
+  readonly currentWeather$: BehaviorSubject<ICurrentWeather>;
+  getCurrentWeather(city: string, country?: string): Observable<ICurrentWeather>;
+  getCurrentWeatherByCoords(coords: GeolocationCoordinates): Observable<ICurrentWeather>;
+  updateCurrentWeather(searchText: string, country?: string): void;
 }
 
 interface ICurrentWeatherData {
@@ -22,48 +26,70 @@ interface ICurrentWeatherData {
   dt: number;
   name: string;
 }
+export const defaultWeather: ICurrentWeather = {
+  city: '--',
+  country: '--',
+  date: Date.now(),
+  image: '',
+  temperature: 0,
+  description: '',
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService implements IWeatherService {
-  constructor(private httpClient: HttpClient) {}
+  readonly currentWeather$ = new BehaviorSubject<ICurrentWeather>(defaultWeather);
 
-  currentWeather: BehaviorSubject<ICurrentWeather> = new BehaviorSubject<ICurrentWeather>(
-    {
-      city: '__',
-      country: '__',
-      date: Date.now(),
-      image: '',
-      temperature: 0,
-      description: '',
-    }
-  );
+  constructor(
+    private httpClient: HttpClient,
+    private postalCodeService: PostalCodeService
+  ) {}
 
-  getCurrentWeather(
-    search: string | number,
-    country?: string
-  ): Observable<ICurrentWeather> {
-    let uriParams = '';
+  getCurrentWeather(searchText: string, country?: string): Observable<ICurrentWeather> {
+    return this.postalCodeService.resolvePostalCode(searchText).pipe(
+      switchMap((postalCode) => {
+        if (postalCode && postalCode !== defaultPostalCode) {
+          return this.getCurrentWeatherByCoords({
+            latitude: postalCode.lat,
+            longitude: postalCode.lng,
+          });
+        } else {
+          const uriParams = new HttpParams().set(
+            'q',
+            country ? `${searchText},${country}` : searchText
+          );
 
-    if (typeof search === 'string') {
-      uriParams = `q=${search}`;
-    } else {
-      uriParams = `zip=${search}`;
-    }
+          return this.getCurrentWeatherHelper(uriParams);
+        }
+      })
+    );
+  }
 
-    if (country) {
-      uriParams = `${uriParams},${country}`;
-    }
+  updateCurrentWeather(searchText: string, country?: string): void {
+    this.getCurrentWeather(searchText, country)
+      .pipe(first())
+      .subscribe((weather) => this.currentWeather$.next(weather));
+  }
+
+  getCurrentWeatherByCoords(coords: {
+    latitude: number;
+    longitude: number;
+  }): Observable<ICurrentWeather> {
+    const uriParams = new HttpParams()
+      .set('lat', coords.latitude.toString())
+      .set('lon', coords.longitude.toString());
 
     return this.getCurrentWeatherHelper(uriParams);
   }
 
-  private getCurrentWeatherHelper(uriParams: string): Observable<ICurrentWeather> {
+  private getCurrentWeatherHelper(uriParams: HttpParams): Observable<ICurrentWeather> {
+    uriParams = uriParams.set('appid', environment.appId);
+
     return this.httpClient
       .get<ICurrentWeatherData>(
-        `${environment.baseUrl}api.openweathermap.org/data/2.5/weather?` +
-          `${uriParams}&appId=${environment.appId}`
+        `${environment.baseUrl}api.openweathermap.org/data/2.5/weather`,
+        { params: uriParams }
       )
       .pipe(map((data) => this.transformToICurrentWeather(data)));
   }

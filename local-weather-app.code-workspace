@@ -5,22 +5,28 @@
 		}
 	],
 	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.activeBorder": "#37cb34"
+		},
+		"peacock.affectActivityBar": true,
+		"peacock.affectStatusBar": true,
+		"peacock.affectTitleBar": false,
 		"cSpell.words": [
-			"chromedriver",
 			"codelyzer",
-			"compat",
 			"debugmessage",
-			"deeppurple",
 			"devkit",
+			"gcloud",
+			"geonames",
 			"localcast",
-			"openweathermap",
+			"ngbracket",
+			"ngrx",
 			"parens",
 			"postdocker",
 			"predocker",
+			"prevercel",
+			"subsink",
 			"taillogs",
-			"wdio",
-			"Weatherservice",
-			"webdriverio"
+			"testid"
 		]
 	}
 }
