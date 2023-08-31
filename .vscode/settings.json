@@ -1,6 +1,8 @@
 {
   "editor.tabSize": 2,
-  "editor.rulers": [90],
+  "editor.rulers": [
+    90
+  ],
   "editor.autoIndent": "full",
   "editor.cursorBlinking": "solid",
   "editor.formatOnType": false,
@@ -17,6 +19,17 @@
   "html.autoClosingTags": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "debug.openExplorerOnEnd": true,
+  "explorer.openEditors.visible": 0,
+  "files.autoSave": "onFocusChange",
+  "git.confirmSync": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.iconTheme": "material-icon-theme",
+  "auto-close-tag.SublimeText3Mode": true,
+  "gitlens.menus": {
+    "editorGroup": false
+  },
+  "ng-evergreen.upgradeChannel": "Latest"
 }

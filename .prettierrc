@@ -2,10 +2,11 @@
   "tabWidth": 2,
   "useTabs": false,
   "printWidth": 90,
-  "semi": true,
+  "semi": false,
   "singleQuote": true,
   "parser": "typescript",
   "trailingComma": "es5",
   "bracketSameLine": true,
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true
 }

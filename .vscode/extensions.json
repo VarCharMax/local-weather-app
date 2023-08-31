@@ -59,6 +59,7 @@
     "ms-vscode.theme-predawnkit",
     "humao.rest-client",
     "chakrounanas.turbo-console-log",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "HookyQR.beautify"
   ]
 }
