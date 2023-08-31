@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 116.0.0.0 (Mac OS 10.15.7)" package="" timestamp="2023-08-28T04:35:02" id="0" hostname="Rohans-MacBook-Pro-2.local" tests="0" errors="0" failures="0" time="0">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36"/>
+  </properties>
+  <system-out>
+    <![CDATA[Chrome 116.0.0.0 (Mac OS 10.15.7) ERROR
+  Some of your tests did a full page reload!
+,Chrome 116.0.0.0 (Mac OS 10.15.7) ERROR
+  Disconnected Client disconnected from CONNECTED state (transport close)
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
