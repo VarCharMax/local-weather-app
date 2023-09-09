@@ -1,11 +1,10 @@
-import * as appStore from '../reducers';
-
-import { Observable, merge } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable, merge } from 'rxjs';
+
 import { ICurrentWeather } from '../interfaces';
+import * as appStore from '../reducers';
 import { WeatherService } from '../weather/weather.service';
 
 @Component({

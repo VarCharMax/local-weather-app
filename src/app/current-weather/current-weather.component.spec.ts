@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import {
   ObservablePropertyStrategy,
   autoSpyObj,
   injectSpy,
 } from 'angular-unit-test-helper';
-import { WeatherService, defaultWeather } from '../weather/weather.service';
 import { first, of } from 'rxjs';
 
 import { AppMaterialModule } from '../app-material.module';
-import { By } from '@angular/platform-browser';
-import { CurrentWeatherComponent } from './current-weather.component';
 import { ICurrentWeather } from '../interfaces';
-import { Store } from '@ngrx/store';
+import { WeatherService, defaultWeather } from '../weather/weather.service';
 import { fakeWeather } from '../weather/weather.service.fake';
+import { CurrentWeatherComponent } from './current-weather.component';
 
 describe('CurrentWeatherComponent', () => {
   let component: CurrentWeatherComponent;

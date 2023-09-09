@@ -1,11 +1,11 @@
-import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { PostalCodeService, defaultPostalCode } from '../postal-code/postal-code.service';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { first, map, switchMap } from 'rxjs/operators';
 
-import { ICurrentWeather } from '../interfaces';
-import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { ICurrentWeather } from '../interfaces';
+import { PostalCodeService, defaultPostalCode } from '../postal-code/postal-code.service';
 
 export interface IWeatherService {
   readonly currentWeather$: BehaviorSubject<ICurrentWeather>;

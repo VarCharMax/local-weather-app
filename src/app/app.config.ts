@@ -1,16 +1,16 @@
-import { ApplicationConfig, enableProdMode } from '@angular/core'
+import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig, enableProdMode } from '@angular/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideEffects } from '@ngrx/effects';
+import { provideStore } from '@ngrx/store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
-import { provideAnimations } from '@angular/platform-browser/animations'
-import { provideEffects } from '@ngrx/effects'
-import { provideStore } from '@ngrx/store'
-import { provideStoreDevtools } from '@ngrx/store-devtools'
-import { environment } from 'src/environments/environment'
-import { CurrentWeatherEffects } from './effects/current-weather.effects'
-import { reducers, metaReducers } from './reducers'
-import { provideHttpClient } from '@angular/common/http'
+import { CurrentWeatherEffects } from './effects/current-weather.effects';
+import { metaReducers, reducers } from './reducers';
 
 if (environment.production) {
-  enableProdMode()
+  enableProdMode();
 }
 
 export const appConfig: ApplicationConfig = {
@@ -24,4 +24,4 @@ export const appConfig: ApplicationConfig = {
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: environment.production }),
   ],
-}
+};

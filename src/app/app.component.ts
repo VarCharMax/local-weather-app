@@ -1,13 +1,13 @@
-import { Component, effect, signal } from '@angular/core';
-
-import { CitySearchComponent } from './city-search/city-search.component';
-import { CurrentWeatherComponent } from './current-weather/current-weather.component';
-import { FlexLayoutModule } from '@ngbracket/ngx-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { Component, effect, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@ngbracket/ngx-layout';
+
+import { CitySearchComponent } from './city-search/city-search.component';
+import { CurrentWeatherComponent } from './current-weather/current-weather.component';
 
 const darkClassName = 'dark-theme';
 

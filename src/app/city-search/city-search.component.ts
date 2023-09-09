@@ -1,23 +1,22 @@
-import * as fromSearch from '../reducers/search.reducer';
-
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   FormControl,
   FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { debounceTime, filter, tap } from 'rxjs/operators';
-
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { SearchActions } from '../actions/search.actions';
 import { Store } from '@ngrx/store';
+import { debounceTime, filter, tap } from 'rxjs/operators';
+
+import { SearchActions } from '../actions/search.actions';
+import * as fromSearch from '../reducers/search.reducer';
 import { WeatherService } from '../weather/weather.service';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-city-search',

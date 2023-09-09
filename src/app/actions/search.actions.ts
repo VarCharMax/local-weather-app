@@ -1,6 +1,6 @@
-import { createAction, props, union } from '@ngrx/store'
+import { createAction, props, union } from '@ngrx/store';
 
-import { ICurrentWeather } from '../interfaces'
+import { ICurrentWeather } from '../interfaces';
 
 export const SearchActions = {
   search: createAction(
@@ -11,7 +11,7 @@ export const SearchActions = {
     '[Search] CurrentWeather loaded',
     props<{ current: ICurrentWeather }>()
   ),
-}
+};
 
-const all = union(SearchActions)
-export type SearchActions = typeof all
+const all = union(SearchActions);
+export type SearchActions = typeof all;
